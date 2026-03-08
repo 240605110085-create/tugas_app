@@ -1,17 +1,37 @@
-function addTask() {
+function addTask(){
+let input = document.getElementById("taskInput");
+let taskText = input.value;
 
-    let input = document.getElementById("taskInput");
-    let task = input.value;
+if(taskText === "") return;
 
-    if(task === "") {
-        alert("Tugas tidak boleh kosong!");
-        return;
-    }
+let li = document.createElement("li");
 
-    let li = document.createElement("li");
-    li.textContent = task;
+li.innerHTML = `
+<span onclick="toggleTask(this)">${taskText}</span>
+<div>
+<button onclick="editTask(this)">✏️</button>
+<button onclick="deleteTask(this)">❌</button>
+</div>
+`;
 
-    document.getElementById("taskList").appendChild(li);
+document.getElementById("taskList").appendChild(li);
 
-    input.value = "";
+input.value="";
+}
+
+function deleteTask(btn){
+btn.parentElement.parentElement.remove();
+}
+
+function toggleTask(task){
+task.classList.toggle("completed");
+}
+
+function editTask(btn){
+let task = btn.parentElement.parentElement.querySelector("span");
+let newTask = prompt("Edit tugas:", task.innerText);
+
+if(newTask){
+task.innerText = newTask;
+}
 }
