@@ -9,10 +9,17 @@ HTML digunakan untuk struktur halaman, CSS untuk mempercantik tampilan, dan Java
 Data kebiasaan disimpan menggunakan localStorage, sehingga tetap tersimpan di browser tanpa memerlukan database.
 
 ✨ Fitur Utama
+
 ➕ Menambahkan tugas atau kebiasaan baru
+
 ✅ Menandai tugas sebagai selesai
+
 💾 Menyimpan data menggunakan localStorage
+
 📊 Menampilkan statistik aktivitas
+
 📈 Grafik progres kebiasaan
+
 📅 Kalender aktivitas harian
+
 📂 Import & export data dalam format JSON
